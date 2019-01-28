@@ -4,14 +4,14 @@ import {
   View,
   Text,
   TextInput,
-  StyleSheet,
   KeyboardAvoidingView
 } from "react-native";
+import { styles } from "../styles/styles"
 
 export default class AddEmployee extends React.Component {
-  static navigationOptions = {
-    title: "Add Record"
-  };
+  // static navigationOptions = {
+  //   title: "Add Record"
+  // };
   state = {
     name: "",
     designation: ""
@@ -23,24 +23,24 @@ export default class AddEmployee extends React.Component {
   render() {
     return (
       <KeyboardAvoidingView
-        style={addStyles.addContainer}
+        style={styles.addContainer}
         behavior="padding"
         enabled
       >
-        <View style={addStyles.addItem}>
-          <Text style={[addStyles.textStyle, addStyles.addHeader]}>Add Record</Text>
-          <View style={addStyles.addRow}>
+        <View style={styles.addItem}>
+          <Text style={[styles.textStyle, styles.addHeader]}>Add Record</Text>
+          <View style={styles.addRow}>
             <Text>Name:</Text>
             <TextInput
-              style={addStyles.input}
+              style={styles.input}
               autoCapitalize="words"
               onChangeText={name => this.setState({ name })}
             />
           </View>
-          <View style={addStyles.addRow}>
+          <View style={styles.addRow}>
             <Text>Designation:</Text>
             <TextInput
-              style={addStyles.input}
+              style={styles.input}
               onChangeText={designation => this.setState({ designation })}
             />
           </View>
@@ -50,46 +50,3 @@ export default class AddEmployee extends React.Component {
     );
   }
 }
-
-addStyles = StyleSheet.create({
-  addContainer: {
-    padding: 20,
-    backgroundColor: "powderblue",
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "stretch"
-  },
-  addItem: {
-    backgroundColor: "white",
-    borderRadius: 10,
-    padding: 10,
-    alignItems: "center",
-    paddingVertical: 20
-  },
-  addRow: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    paddingTop: 10,
-    width: "100%",
-    paddingHorizontal: 20
-  },
-  input: {
-    width: "70%",
-    paddingLeft: 5,
-    borderWidth: 1,
-    borderColor: "grey"
-  },
-  textStyle: {
-    fontSize: 30,
-    color: "#494a4c",
-    paddingLeft: 10,
-    paddingRight: 10,
-    textShadowColor: "#737477",
-    textShadowOffset: { width: 1, height: 1 }
-  },
-  addHeader: {
-    paddingBottom:20
-  }
-});

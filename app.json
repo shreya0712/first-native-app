@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "User List",
-    "slug": "user-list",
+    "slug": "first-native.app",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
