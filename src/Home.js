@@ -6,7 +6,6 @@ export default class HomeScreen extends React.Component {
     title: "Home"
   };
   render() {
-    console.log(this.props.employees);
     return (
       <View style={styles.homeContainer}>
         {this.props.employees && this.props.employees.length !== 0 ? (
